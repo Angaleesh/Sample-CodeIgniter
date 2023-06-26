@@ -14,9 +14,14 @@
 
 <body>
     <div class="container mt-5">
+    <?php
+                            if (session()->get('u_type')==1){
+                            ?>
         <div class="d-flex justify-content-end ">
             <a href="<?= site_url('/userForm')?>" class="btn btn-Success">Add user</a>
         </div>
+        <?php 
+                        }?>
         <div class="d-flex justify-content-start mb-3">
             <p><b>Username: <?=session()->get('username')?></b></p>
         </div>
@@ -50,7 +55,8 @@
                             <?php
                             if (session()->get('u_type')==1){
                             ?>
-                            <td><a href="<?= base_url('edit/'.$user['id'])?>" class="btn btn-primary">Edit</a>
+                            <td>
+                                <a href="<?= base_url('edit/'.$user['id'])?>" class="btn btn-primary">Edit</a>
                                 <a href="<?= base_url('delete/'.$user['id'])?>" class="btn btn-danger">Delete</a>
                             </td>
                             <?php 

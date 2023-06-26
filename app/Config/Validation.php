@@ -37,7 +37,11 @@ class Validation extends BaseConfig
         'list'   => 'CodeIgniter\Validation\Views\list',
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
-
+    public array $signup=[
+        'username'     => 'required',
+        'password'     => 'required',
+        'pass_confirm' => 'required|matches[password]',
+    ];
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------

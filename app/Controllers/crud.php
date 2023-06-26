@@ -15,7 +15,7 @@ class crud extends Controller{
          
         $mod=new newModel();
         $data=[
-            'users' => $mod->orderBy('id','ASC')->paginate(2),
+            'users' => $mod->orderBy('id','ASC')->paginate(5),
             'pager' => $mod->pager
         ];
         // $data['users']=$mod->orderBy('id','ASC')->findAll();
@@ -35,7 +35,7 @@ class crud extends Controller{
         ];
         $mod->set($data);
         $mod->insert();
-        return redirect()->to(base_url());
+        return redirect()->to('/dashboard');
     }
     public function edit($id)
     {
@@ -48,7 +48,7 @@ class crud extends Controller{
         $mod=new newModel();
         $mod->where('id',$id)->delete();
         $use['users']=$mod->orderBy('id','ASC')->findAll();
-        return redirect()->to(base_url());
+        return redirect()->to('/dashboard');
     }
     public function update($id)
     {
@@ -61,7 +61,7 @@ class crud extends Controller{
         $mod->set($data);
         $mod->where('id',$id);
         $mod->update();
-        return redirect()->to(base_url());
+        return redirect()->to('/dashboard');
     }
 
 }

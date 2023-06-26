@@ -287,7 +287,7 @@ input[type=text]:placeholder {
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    
+    <?=validation_list_errors()?>
     <form class="mt-5" method="post" action="<?= site_url('reg_submit')?>"> 
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username ">
       <input type="text" id="password" class="fadeIn third" name="pwd" placeholder="Password">
